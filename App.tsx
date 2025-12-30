@@ -6,7 +6,7 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -33,14 +33,51 @@ function AppContent() {
         templateFileName="App.tsx"
         safeAreaInsets={safeAreaInsets}
       />
+
+    <View style={styles.container}>
+      <Text style={styles.quicksandRegular}>
+        This text uses a quick sand font
+      </Text>
+      <Text style={styles.quicksandLight}>
+        This text uses a quick sand light font
+      </Text>
+      <Text style={styles.ralewayThin}>
+        This text uses a thin italic raleway font
+      </Text>
+      <Text style={styles.ralewayItalic}>
+        This text uses a thin italic raleway font
+      </Text>
+    </View>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+
+    container: {
+      backgroundColor: "lavender",
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    quicksandLight: {
+      fontFamily: "Quicksand-Light",
+      fontSize: 20,
+    },
+    quicksandRegular: {
+      fontFamily: "Quicksand-Regular",
+      fontSize: 20,
+    },
+    ralewayItalic: {
+      fontFamily: "Raleway-Italic",
+      fontSize: 20,
+    },
+    ralewayThin: {
+      fontFamily: "Raleway-ThinItalic",
+      fontSize: 20,
+    },
+
 });
 
 export default App;
