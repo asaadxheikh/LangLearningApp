@@ -1,32 +1,35 @@
+// src/screens/onBoarding/WelcomeScreen/index.js
 
 import React, { useState } from 'react';
 import {
   View,
   Text,
-  TextInput,
-  TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
   StatusBar,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
 } from 'react-native';
 import { colors } from '../../../theme/colors';
-
-const WelcomeScreen = ({ navigation }) => {
+import Icons from '../../../assets/icons/icons'
+import CustomInput from '../../../components/CustomInput/index';
+import Button from '../../../components/Button/index';
+import { navigate } from '../../../navigation/navigationRef';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import OnboardingProgressBadge from '../component/OnboardingProgressBadge'
+const WelcomeScreen = () => {
   const [userName, setUserName] = useState('');
 
   const handleContinue = () => {
     if (userName.trim()) {
-      navigation.navigate('LanguageSelection', { userName: userName.trim() });
+      navigate('LangLangSelection', { userName: userName.trim() });
     }
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
-      
+
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}
@@ -36,10 +39,15 @@ const WelcomeScreen = ({ navigation }) => {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
+                <OnboardingProgressBadge
+    currentStep={1}
+    totalSteps={6}
+    customstyles={{marginHorizontal:20}}
+  />
           {/* Icon Container */}
           <View style={styles.iconContainer}>
             <View style={styles.iconCircle}>
-              <Ionicons name="globe-outline" size={56} color={colors.accent} />
+              <Icons.Ionicons name="globe-outline" size={56} color={colors.accent} />
             </View>
           </View>
 
@@ -55,12 +63,10 @@ const WelcomeScreen = ({ navigation }) => {
 
           {/* Input Container */}
           <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your name"
-              placeholderTextColor={colors.textLight}
+            <CustomInput
               value={userName}
               onChangeText={setUserName}
+              placeholder="Enter your name"
               autoCapitalize="words"
               returnKeyType="done"
               onSubmitEditing={handleContinue}
@@ -88,18 +94,12 @@ const WelcomeScreen = ({ navigation }) => {
 
         {/* Continue Button */}
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={[
-              styles.button,
-              !userName.trim() && styles.buttonDisabled,
-            ]}
-            onPress={handleContinue}
+          <Button
+            title="Continue"
+            icon="chevron-forward"
             disabled={!userName.trim()}
-            activeOpacity={0.8}
-          >
-            <Text style={styles.buttonText}>Continue</Text>
-            <Ionicons name="chevron-forward" size={20} color={colors.text} />
-          </TouchableOpacity>
+            onPress={handleContinue}
+          />
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -157,17 +157,6 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 32,
   },
-  input: {
-    width: '100%',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    fontSize: 16,
-    borderWidth: 2,
-    borderColor: colors.primary,
-    borderRadius: 16,
-    backgroundColor: colors.white,
-    color: colors.text,
-  },
   features: {
     gap: 16,
   },
@@ -189,30 +178,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     paddingHorizontal: 24,
     paddingBottom: 24,
-  },
-  button: {
-    width: '100%',
-    paddingVertical: 18,
-    paddingHorizontal: 24,
-    backgroundColor: colors.primary,
-    borderRadius: 16,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
-  },
-  buttonDisabled: {
-    opacity: 0.5,
-  },
-  buttonText: {
-    fontSize: 17,
-    fontWeight: '600',
-    color: colors.text,
   },
 });
 

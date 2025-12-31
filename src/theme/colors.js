@@ -1,6 +1,7 @@
 export const colors = {
     primary: '#E8DCC4',      // Beige (Primary)
-    secondary: '#C8B8A8',    // Darker Beige
+    secondary: 'black',    
+    grey:"grey",
     accent: '#A8D5BA',       // Pastel Green
     accentPink: '#F4C7D3',   // Pastel Pink
     accentBlue: '#B8D4E8',   // Pastel Blue
