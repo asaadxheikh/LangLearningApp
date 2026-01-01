@@ -79,3 +79,30 @@ export const languages = [
   { id: 'pt', name: 'Portuguese', flag: '🇵🇹', color: '#BFD7ED' },
   { id: 'jp', name: 'Japanese', flag: '🇯🇵', color: '#C7EDE6' },
 ];
+
+export  const testAreas = [
+    {
+      id: '1',
+      key: 'listening',
+      name: 'Listening',
+      icon: 'headset',
+      color: colors.accentBlue,
+      description: 'Understand spoken language',
+    },
+    {
+      id: '2',
+      key: 'understanding',
+      name: 'Understanding',
+      icon: 'bulb',
+      color: colors.accent,
+      description: 'Comprehend written content',
+    },
+    {
+      id: '3',
+      key: 'speaking',
+      name: 'Speaking',
+      icon: 'mic',
+      color: colors.accentPink,
+      description: 'Express yourself clearly',
+    },
+  ];

@@ -15,45 +15,15 @@ import Icons from '../../../assets/icons/icons';
 import Button from '../../../components/Button/index';
 import { navigate, goBack } from '../../../navigation/navigationRef';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
+import { levels } from '../../../constants/data';
 
 const SkillLevelScreen = ({ route }) => {
   const { userName, selectedLanguage, selectedGoals } = route.params;
   const [selectedLevel, setSelectedLevel] = useState('');
 
-  const levels = [
-    {
-      id: 'beginner',
-      name: 'Beginner',
-      description: 'Just starting out',
-      icon: 'leaf',
-      color: colors.accent,
-    },
-    {
-      id: 'intermediate',
-      name: 'Intermediate',
-      description: 'Know some basics',
-      icon: 'trending-up',
-      color: colors.accentBlue,
-    },
-    {
-      id: 'advanced',
-      name: 'Advanced',
-      description: 'Fairly comfortable',
-      icon: 'rocket',
-      color: colors.accentPink,
-    },
-    {
-      id: 'not_sure',
-      name: 'Not sure',
-      description: 'Let AI decide for me',
-      icon: 'sparkles',
-      color: colors.secondary,
-    },
-  ];
-
   const handleContinue = () => {
     if (selectedLevel) {
-      navigate('PlanGenerated', {
+      navigate('PlacementTestScreen', {
         userName,
         selectedLanguage,
         selectedGoals,

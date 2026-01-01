@@ -7,6 +7,8 @@ import WelcomeScreen from '../screens/onBoarding/WelcomeScreen';
 import LanguageSelectionScreen from '../screens/onBoarding/LanguageSelectionScreen';
 import GoalSelectionScreen from '../screens/onBoarding/GoalSelection';
 import SkillSelectionScreen from '../screens/onBoarding/SkillSelectionScreen';
+import PlacementTestScreen from '../screens/onBoarding/PlacementTestScreen';
+import HomeScreen from '../screens/home';
 
 
 const Stack = createNativeStackNavigator();
@@ -54,6 +56,8 @@ const AppNavigator = () => {
             <Stack.Screen name="GoalSelection" component={GoalSelectionScreen} />
             <Stack.Screen name="LangLangSelection" component={LanguageSelectionScreen} />
             <Stack.Screen name="SkillLevelScreenScreen" component={SkillSelectionScreen} />
+            <Stack.Screen name="PlacementTestScreen" component={PlacementTestScreen} />
+            <Stack.Screen name="HomeScreen" component={HomeScreen} />
 
           </>
         ) : (
