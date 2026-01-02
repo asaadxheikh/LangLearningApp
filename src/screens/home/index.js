@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -6,16 +5,19 @@ import {
   StatusBar,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../../theme/colors';
 import Icons from '../../assets/icons/icons';
-
+import React, { useState } from 'react';
+import SettingsModal from './settingsModal'
 const HomeScreen = ({ navigation }) => {
-  const [userName] = useState('Alex'); // This should come from storage/context
+  const [userName] = useState('Alex');
   const [streak, setStreak] = useState(5);
-  const [todayProgress, setTodayProgress] = useState(3); // 3 out of 5 completed
+  const [todayProgress, setTodayProgress] = useState(5); // Changed to 5 to show completion
   const totalSections = 5;
+  const [settingsVisible, setSettingsVisible] = useState(false);
 
   const learningTasks = [
     {
@@ -24,8 +26,8 @@ const HomeScreen = ({ navigation }) => {
       description: 'Resume your last lesson',
       icon: 'play-circle',
       color: colors.accent,
-      completed: false,
-      screen: 'ContinueLearning',
+      completed: false, // Changed to true
+      screen: 'LessonFlowScreen',
     },
     {
       id: 'mistake',
@@ -33,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
       description: 'Learn from common errors',
       icon: 'alert-circle',
       color: colors.accentPink,
-      completed: true,
+      completed: false,
       screen: 'DailyMistake',
     },
     {
@@ -60,7 +62,7 @@ const HomeScreen = ({ navigation }) => {
       description: 'Key phrases from today',
       icon: 'checkmark-done',
       color: colors.accentPink,
-      completed: false,
+      completed: true, // Changed to true
       screen: 'QuickReview',
     },
   ];
@@ -73,11 +75,49 @@ const HomeScreen = ({ navigation }) => {
 
   const progressPercentage = (todayProgress / totalSections) * 100;
 
+  const renderTaskCard = ({ item, index }) => (
+    <TouchableOpacity
+      style={[
+        styles.horizontalTaskCard,
+        item.completed && styles.taskCardCompleted,
+      ]}
+      onPress={() => handleTaskPress(item)}
+      activeOpacity={0.7}
+    >
+      <View style={[styles.taskNumberBadge, { backgroundColor: item.color }]}>
+        <Text style={styles.taskNumberText}>{index + 1}</Text>
+      </View>
+
+      <View style={[styles.taskIconContainer, { backgroundColor: `${item.color}25` }]}>
+        <Icons.Ionicons
+          name={item.icon}
+          size={32}
+          color={item.color}
+        />
+      </View>
+
+      <View style={styles.horizontalTaskContent}>
+        <Text style={styles.horizontalTaskTitle} numberOfLines={2}>
+          {item.title}
+        </Text>
+        <Text style={styles.horizontalTaskDescription} numberOfLines={2}>
+          {item.description}
+        </Text>
+      </View>
+
+      {item.completed && (
+        <View style={[styles.completedBadge, { backgroundColor: item.color }]}>
+          <Icons.Ionicons name="checkmark" size={16} color={colors.white} />
+        </View>
+      )}
+    </TouchableOpacity>
+  );
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
 
-      <View style={styles.container}>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerLeft}>
@@ -88,7 +128,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
           
-          <TouchableOpacity style={styles.settingsButton}>
+          <TouchableOpacity onPress={() => setSettingsVisible(true)} style={styles.settingsButton}>
             <Icons.Ionicons name="settings-outline" size={24} color={colors.text} />
           </TouchableOpacity>
         </View>
@@ -111,70 +151,63 @@ const HomeScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        {/* Learning Tasks */}
-        <ScrollView
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        >
+        {/* Learning Flow Section */}
+        <View style={styles.learningFlowSection}>
           <Text style={styles.sectionTitle}>Learning Flow</Text>
           
-          <View style={styles.tasksContainer}>
-            {learningTasks.map((task, index) => (
-              <TouchableOpacity
-                key={task.id}
-                style={[
-                  styles.taskCard,
-                  task.completed && styles.taskCardCompleted,
-                ]}
-                onPress={() => handleTaskPress(task)}
-                activeOpacity={0.7}
-              >
-                <View style={styles.taskLeft}>
-                  <View style={[styles.taskIconContainer, { backgroundColor: `${task.color}25` }]}>
-                    <Icons.Ionicons
-                      name={task.icon}
-                      size={28}
-                      color={task.color}
-                    />
-                  </View>
-                  
-                  <View style={styles.taskContent}>
-                    <View style={styles.taskTitleRow}>
-                      <Text style={styles.taskNumber}>{index + 1}.</Text>
-                      <Text style={styles.taskTitle}>{task.title}</Text>
-                    </View>
-                    <Text style={styles.taskDescription}>{task.description}</Text>
-                  </View>
-                </View>
-                
-                {task.completed ? (
-                  <View style={[styles.completedBadge, { backgroundColor: task.color }]}>
-                    <Icons.Ionicons name="checkmark" size={16} color={colors.white} />
-                  </View>
-                ) : (
-                  <Icons.Ionicons name="chevron-forward" size={24} color={colors.textLight} />
-                )}
-              </TouchableOpacity>
-            ))}
-          </View>
+          <FlatList
+            data={learningTasks}
+            renderItem={renderTaskCard}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.horizontalList}
+            snapToInterval={280}
+            decelerationRate="fast"
+          />
+        </View>
 
-          {/* Completion Message (shown when all tasks done) */}
-          {todayProgress === totalSections && (
-            <View style={styles.completionCard}>
-              <View style={styles.completionIcon}>
-                <Icons.Ionicons name="trophy" size={40} color="#FFD700" />
-              </View>
-              <Text style={styles.completionTitle}>Day Complete! 🎉</Text>
-              <Text style={styles.completionText}>
-                Amazing work! Your progress has been saved and your streak is updated.
-              </Text>
-              <Text style={styles.completionSubtext}>
-                Come back tomorrow for new lessons!
-              </Text>
+        {/* Completion State - Shows when all tasks are completed */}
+        {todayProgress === totalSections && (
+          <View style={styles.completionStateCard}>
+            {/* Trophy Icon */}
+            <View style={styles.completionIconCircle}>
+              <Icons.Ionicons name="trophy" size={48} color="#FFD700" />
             </View>
-          )}
-        </ScrollView>
-      </View>
+
+            {/* Completion Title */}
+            <Text style={styles.completionStateTitle}>Day Complete! 🎉</Text>
+
+          </View>
+        )}
+
+        {/* Additional Stats */}
+        <View style={styles.statsSection}>
+          <View style={styles.statCard}>
+            <Icons.Ionicons name="calendar" size={24} color={colors.accent} />
+            <Text style={styles.statNumber}>15</Text>
+            <Text style={styles.statLabel}>Days Active</Text>
+          </View>
+          
+          <View style={styles.statCard}>
+            <Icons.Ionicons name="book" size={24} color={colors.accentBlue} />
+            <Text style={styles.statNumber}>42</Text>
+            <Text style={styles.statLabel}>Lessons Done</Text>
+          </View>
+          
+          <View style={styles.statCard}>
+            <Icons.Ionicons name="trophy" size={24} color={colors.accentPink} />
+            <Text style={styles.statNumber}>8</Text>
+            <Text style={styles.statLabel}>Achievements</Text>
+          </View>
+        </View>
+      </ScrollView>
+      <SettingsModal
+  visible={settingsVisible}
+  onClose={() => setSettingsVisible(false)}
+  navigation={navigation}
+  userName={userName}
+/>
     </SafeAreaView>
   );
 };
@@ -268,117 +301,180 @@ const styles = StyleSheet.create({
     marginTop: 8,
     textAlign: 'center',
   },
-  scrollContent: {
-    paddingHorizontal: 24,
-    paddingBottom: 24,
+  learningFlowSection: {
+    marginBottom: 24,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: '700',
     color: colors.text,
+    paddingHorizontal: 24,
     marginBottom: 16,
   },
-  tasksContainer: {
-    gap: 12,
+  horizontalList: {
+    paddingHorizontal: 24,
+    gap: 16,
   },
-  taskCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: colors.card,
-    borderRadius: 16,
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
-  },
-  taskCardCompleted: {
-    opacity: 0.7,
-  },
-  taskLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flex: 1,
-  },
-  taskIconContainer: {
-    width: 56,
-    height: 56,
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 16,
-  },
-  taskContent: {
-    flex: 1,
-  },
-  taskTitleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 4,
-  },
-  taskNumber: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: colors.text,
-    marginRight: 6,
-  },
-  taskTitle: {
-    fontSize: 17,
-    fontWeight: '600',
-    color: colors.text,
-  },
-  taskDescription: {
-    fontSize: 14,
-    color: colors.textLight,
-  },
-  completedBadge: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  completionCard: {
+  horizontalTaskCard: {
+    width: 260,
     backgroundColor: colors.card,
     borderRadius: 20,
-    padding: 24,
-    alignItems: 'center',
-    marginTop: 24,
+    padding: 20,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 5,
+    position: 'relative',
   },
-  completionIcon: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: `${colors.primary}50`,
+  taskCardCompleted: {
+    opacity: 0.7,
+  },
+  taskNumberBadge: {
+    position: 'absolute',
+    top: 16,
+    right: 16,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  taskNumberText: {
+    color: colors.white,
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  taskIconContainer: {
+    width: 72,
+    height: 72,
+    borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 16,
   },
-  completionTitle: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: colors.text,
+  horizontalTaskContent: {
     marginBottom: 12,
   },
-  completionText: {
-    fontSize: 16,
+  horizontalTaskTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.text,
+    marginBottom: 8,
+  },
+  horizontalTaskDescription: {
+    fontSize: 14,
+    color: colors.textLight,
+    lineHeight: 20,
+  },
+  completedBadge: {
+    position: 'absolute',
+    bottom: 16,
+    right: 16,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  completionStateCard: {
+    backgroundColor: colors.card,
+    borderRadius: 24,
+    padding: 28,
+    marginHorizontal: 24,
+    marginBottom: 24,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  completionIconCircle: {
+    width: 96,
+    height: 96,
+    borderRadius: 48,
+    backgroundColor: `${colors.primary}40`,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  completionStateTitle: {
+    fontSize: 26,
+    fontWeight: '700',
+    color: colors.text,
+    marginBottom: 24,
+    textAlign: 'center',
+  },
+  completionStatusContainer: {
+    width: '100%',
+    gap: 16,
+    marginBottom: 20,
+  },
+  statusItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.background,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 16,
+  },
+  statusIconCircle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  statusText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: colors.text,
+    flex: 1,
+  },
+  completionMessage: {
+    fontSize: 15,
     color: colors.textLight,
     textAlign: 'center',
     lineHeight: 22,
-    marginBottom: 8,
+    paddingHorizontal: 8,
   },
-  completionSubtext: {
-    fontSize: 14,
+  statsSection: {
+    flexDirection: 'row',
+    paddingHorizontal: 24,
+    marginBottom: 24,
+    gap: 12,
+  },
+  statCard: {
+    flex: 1,
+    backgroundColor: colors.card,
+    borderRadius: 16,
+    padding: 16,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  statNumber: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: colors.text,
+    marginTop: 8,
+    marginBottom: 4,
+  },
+  statLabel: {
+    fontSize: 12,
     color: colors.textLight,
     textAlign: 'center',
-    fontStyle: 'italic',
   },
 });
 
