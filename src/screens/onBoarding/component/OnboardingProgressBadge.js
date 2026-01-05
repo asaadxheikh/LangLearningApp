@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {colors} from '../../../theme/colors'
-const OnboardingProgressBadge = ({ currentStep, totalSteps ,customstyles}) => {
+const OnboardingProgressBadge = ({ currentStep, totalSteps=5 ,customstyles}) => {
   return (
     <View style={[styles.container,customstyles]}>
       <Text style={styles.text}>

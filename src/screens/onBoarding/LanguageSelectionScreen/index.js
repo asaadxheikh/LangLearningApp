@@ -47,7 +47,6 @@ const LanguageSelectionScreen = ({ route }) => {
 
   <OnboardingProgressBadge
     currentStep={2}
-    totalSteps={6}
   />
 </View>
       <View style={styles.container}>

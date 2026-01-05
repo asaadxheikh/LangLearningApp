@@ -10,5 +10,9 @@ export const colors = {
     white: '#FFFFFF',
     background: '#F9F6F2',   // Light Cream
     card: '#FFFFFF',
-    shadow: 'rgba(0, 0, 0, 0.08)'
+    shadow: 'rgba(0, 0, 0, 0.08)',
+    red_600:"#FF6B6B",
+    lightPrimary:'rgba(255, 255, 255, 0.25)',
+    red_500:"#FFE5E5",
+    lightGrey:"#F5F5F5"
   };

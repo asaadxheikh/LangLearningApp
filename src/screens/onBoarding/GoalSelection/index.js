@@ -62,7 +62,6 @@ const GoalSelectionScreen = ({ route }) => {
         {/* Progress Badge */}
         <OnboardingProgressBadge
           currentStep={3}
-          totalSteps={6}
           customstyles={{ marginHorizontal: 24, marginBottom: 16 }}
         />
 

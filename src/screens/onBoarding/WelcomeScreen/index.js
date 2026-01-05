@@ -41,7 +41,6 @@ const WelcomeScreen = () => {
         >
                 <OnboardingProgressBadge
     currentStep={1}
-    totalSteps={6}
     customstyles={{marginHorizontal:20}}
   />
           {/* Icon Container */}

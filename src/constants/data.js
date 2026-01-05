@@ -78,6 +78,17 @@ export const languages = [
   { id: 'it', name: 'Italian', flag: '🇮🇹', color: '#F4C2C2' },
   { id: 'pt', name: 'Portuguese', flag: '🇵🇹', color: '#BFD7ED' },
   { id: 'jp', name: 'Japanese', flag: '🇯🇵', color: '#C7EDE6' },
+  { id: 'nl', name: 'Dutch', flag: '🇳🇱', color: '#FFD6A5' },
+  { id: 'sv', name: 'Swedish', flag: '🇸🇪', color: '#CDB4DB' },
+  { id: 'pl', name: 'Polish', flag: '🇵🇱', color: '#E4C1F9' },
+  { id: 'ru', name: 'Russian', flag: '🇷🇺', color: '#FFADAD' },
+
+  { id: 'ar', name: 'Arabic', flag: '🇸🇦', color: '#B5EAD7' },
+  { id: 'hi', name: 'Hindi', flag: '🇮🇳', color: '#FFE5B4' },
+  { id: 'bn', name: 'Bengali', flag: '🇧🇩', color: '#D0F4DE' },
+
+  { id: 'zh', name: 'Chinese', flag: '🇨🇳', color: '#FEC5BB' },
+  { id: 'ko', name: 'Korean', flag: '🇰🇷', color: '#E0FBFC' },
 ];
 
 export  const testAreas = [

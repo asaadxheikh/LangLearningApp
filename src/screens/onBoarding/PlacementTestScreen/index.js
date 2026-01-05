@@ -85,7 +85,6 @@ const PlacementTestScreen = ({ route }) => {
         {/* Progress Badge */}
         <OnboardingProgressBadge
           currentStep={5}
-          totalSteps={6}
           customstyles={{ marginHorizontal: 24, marginBottom: 16 }}
         />
 

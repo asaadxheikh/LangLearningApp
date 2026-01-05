@@ -16,7 +16,7 @@ import Button from '../../../components/Button/index';
 import { navigate, goBack } from '../../../navigation/navigationRef';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
 import { levels } from '../../../constants/data';
-
+import Spacer from '../../../components/Spacer/Spacer'
 const SkillLevelScreen = ({ route }) => {
   const { userName, selectedLanguage, selectedGoals } = route.params;
   const [selectedLevel, setSelectedLevel] = useState('');
@@ -47,15 +47,16 @@ const SkillLevelScreen = ({ route }) => {
             <Icons.Ionicons name="chevron-back" size={28} color={colors.text} />
           </TouchableOpacity>
           
+            <Spacer width={15}/>
+          {/* <View style={styles.placeholder} /> */}
           <Text style={styles.userName}>{userName}</Text>
           
-          <View style={styles.placeholder} />
         </View>
 
         {/* Progress Badge */}
         <OnboardingProgressBadge
           currentStep={4}
-          totalSteps={6}
+          totalSteps={5}
           customstyles={{ marginHorizontal: 24, marginBottom: 16 }}
         />
 
@@ -156,7 +157,6 @@ const styles = StyleSheet.create({
   topHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12,
     backgroundColor: colors.background,
