@@ -8,6 +8,7 @@ import LanguageSelectionScreen from '../screens/onBoarding/LanguageSelectionScre
 import GoalSelectionScreen from '../screens/onBoarding/GoalSelection';
 import SkillSelectionScreen from '../screens/onBoarding/SkillSelectionScreen';
 import PlacementTestScreen from '../screens/onBoarding/PlacementTestScreen';
+import PersonalizedPlanScreen from '../screens/onBoarding/PersonalizedPlanScreen';
 import LessonFlowScreen from '../screens/LessonFlowScreen';
 import HomeScreen from '../screens/home';
 
@@ -58,6 +59,7 @@ const AppNavigator = () => {
             <Stack.Screen name="LangLangSelection" component={LanguageSelectionScreen} />
             <Stack.Screen name="SkillLevelScreenScreen" component={SkillSelectionScreen} />
             <Stack.Screen name="PlacementTestScreen" component={PlacementTestScreen} />
+            <Stack.Screen name="PersonalizedPlanScreen" component={PersonalizedPlanScreen} />
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="LessonFlowScreen" component={LessonFlowScreen} />
           </>

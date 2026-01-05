@@ -42,8 +42,8 @@ const PlacementTestScreen = ({ route }) => {
   ];
 
   const handleTakeTest = () => {
-    // Navigate to actual test or generate plan
-    navigate('HomeScreen', {
+    // Navigate to personalized plan screen
+    navigate('PersonalizedPlanScreen', {
       userName,
       selectedLanguage,
       selectedGoals,
@@ -53,7 +53,8 @@ const PlacementTestScreen = ({ route }) => {
   };
 
   const handleSkip = () => {
-    navigate('HomeScreen', {
+    // Navigate to personalized plan screen
+    navigate('PersonalizedPlanScreen', {
       userName,
       selectedLanguage,
       selectedGoals,
