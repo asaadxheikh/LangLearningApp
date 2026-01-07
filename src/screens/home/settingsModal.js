@@ -13,7 +13,7 @@ import {
 import { colors } from '../../theme/colors';
 import Icons from '../../assets/icons/icons';
 
-const SettingsModal = ({ visible, onClose, navigation, userName = 'Alex' }) => {
+const SettingsModal = ({ visible, onClose, onOpenChangeName, navigation, userName = 'Alex' }) => {
   const [notifications, setNotifications] = useState(true);
   const [selectedLanguage] = useState('Spanish');
   const [dailyGoal] = useState('10 minutes');
@@ -21,7 +21,9 @@ const SettingsModal = ({ visible, onClose, navigation, userName = 'Alex' }) => {
 
   const handleNavigation = (screen) => {
     onClose();
-    navigation.navigate(screen);
+    if (navigation) {
+      navigation.navigate(screen);
+    }
   };
 
   return (
@@ -59,7 +61,7 @@ const SettingsModal = ({ visible, onClose, navigation, userName = 'Alex' }) => {
               {/* Profile Section */}
               <TouchableOpacity 
                 style={styles.profileSection}
-                onPress={() => handleNavigation('Profile')}
+                onPress={onOpenChangeName}
               >
                 <View style={styles.avatarCircle}>
                   <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
@@ -202,15 +204,16 @@ const SettingsModal = ({ visible, onClose, navigation, userName = 'Alex' }) => {
 const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
+    backgroundColor: colors.semiTransparent,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    padding: 20,
+    paddingHorizontal: 15,
+    paddingBottom:25
   },
   modalContainer: {
     width: '100%',
     maxWidth: 400,
-    maxHeight: '85%',
+    maxHeight: '80%',
   },
   modalContent: {
     backgroundColor: colors.background,

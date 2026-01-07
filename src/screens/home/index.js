@@ -13,6 +13,7 @@ import { colors } from '../../theme/colors';
 import Icons from '../../assets/icons/icons';
 import React, { useState } from 'react';
 import SettingsModal from './settingsModal';
+import ChangeNameModal from './changeNameModal';
 
 const HomeScreen = ({ navigation }) => {
   const [userName] = useState('Alex');
@@ -20,6 +21,7 @@ const HomeScreen = ({ navigation }) => {
   const [todayProgress, setTodayProgress] = useState(3);
   const totalSections = 5;
   const [settingsVisible, setSettingsVisible] = useState(false);
+  const [changeNameVisible, setChangeNameVisible] = useState(false);
 
   // Default color palette for tasks and cards
   const defaultColors = [colors.primary];
@@ -345,8 +347,18 @@ const HomeScreen = ({ navigation }) => {
       <SettingsModal
         visible={settingsVisible}
         onClose={() => setSettingsVisible(false)}
+        onOpenChangeName={() => {
+          setSettingsVisible(false);
+          setChangeNameVisible(true);
+        }}
         navigation={navigation}
         userName={userName}
+      />
+      
+      <ChangeNameModal
+        visible={changeNameVisible}
+        onClose={() => setChangeNameVisible(false)}
+        onSave={() => setChangeNameVisible(false)}
       />
     </SafeAreaView>
   );

@@ -14,5 +14,6 @@ export const colors = {
     red_600:"#FF6B6B",
     lightPrimary:'rgba(255, 255, 255, 0.25)',
     red_500:"#FFE5E5",
-    lightGrey:"#F5F5F5"
+    lightGrey:"#F5F5F5",
+    semiTransparent:'rgba(0, 0, 0, 0.5)'
   };

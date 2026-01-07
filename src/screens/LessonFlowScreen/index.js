@@ -289,20 +289,7 @@ const LessonFlowScreen = ({ navigation, route }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Progress Steps */}
-      <View style={styles.progressSteps}>
-        {['scenario', 'dialogue', 'response', 'feedback'].map((step, index) => (
-          <View
-            key={step}
-            style={[
-              styles.progressStep,
-              currentStep === step && styles.progressStepActive,
-              ['dialogue', 'response', 'feedback'].indexOf(currentStep) > index - 1 &&
-                styles.progressStepCompleted,
-            ]}
-          />
-        ))}
-      </View>
+     
 
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {currentStep === 'scenario' && renderScenario()}
