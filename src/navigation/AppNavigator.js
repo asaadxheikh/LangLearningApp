@@ -8,8 +8,10 @@ import WelcomeScreen from '../screens/onBoarding/WelcomeScreen';
 import LanguageSelectionScreen from '../screens/onBoarding/LanguageSelectionScreen';
 import GoalSelectionScreen from '../screens/onBoarding/GoalSelection';
 import SkillSelectionScreen from '../screens/onBoarding/SkillSelectionScreen';
+import LevelAssessmentScreen from '../screens/onBoarding/LevelAssessmentScreen';
 import PlacementTestScreen from '../screens/onBoarding/PlacementTestScreen';
 import PersonalizedPlanScreen from '../screens/onBoarding/PersonalizedPlanScreen';
+import ReminderScreen from '../screens/onBoarding/ReminderScreen';
 import LessonFlowScreen from '../screens/LessonFlowScreen';
 import HomeScreen from '../screens/home';
 
@@ -60,8 +62,10 @@ const AppNavigator = () => {
               <Stack.Screen name="GoalSelection" component={GoalSelectionScreen} />
               <Stack.Screen name="LangLangSelection" component={LanguageSelectionScreen} />
               <Stack.Screen name="SkillLevelScreenScreen" component={SkillSelectionScreen} />
+              <Stack.Screen name="LevelAssessmentScreen" component={LevelAssessmentScreen} />
               <Stack.Screen name="PlacementTestScreen" component={PlacementTestScreen} />
               <Stack.Screen name="PersonalizedPlanScreen" component={PersonalizedPlanScreen} />
+              <Stack.Screen name="ReminderScreen" component={ReminderScreen} />
               <Stack.Screen name="HomeScreen" component={HomeScreen} />
               <Stack.Screen name="LessonFlowScreen" component={LessonFlowScreen} />
             </>

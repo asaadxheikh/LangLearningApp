@@ -66,7 +66,7 @@ const PersonalizedPlanScreen = () => {
             <Icons.Ionicons name="chevron-back" size={28} color={colors.text} />
           </TouchableOpacity>
           
-          <Text style={styles.userName}>{userName}</Text>
+    
           
           <View style={styles.placeholder} />
         </View>

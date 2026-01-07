@@ -26,8 +26,13 @@ const SkillLevelScreen = () => {
 
   const handleContinue = () => {
     if (selectedLevel) {
-      updateUserData({ selectedLevel });
-      navigate('PlacementTestScreen');
+      // Check if "not sure" (id: '4') is selected
+      if (selectedLevel === '4') {
+        navigate('LevelAssessmentScreen');
+      } else {
+        updateUserData({ selectedLevel });
+          navigate('ReminderScreen');
+      }
     }
   };
 
