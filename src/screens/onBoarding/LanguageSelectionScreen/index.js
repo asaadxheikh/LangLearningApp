@@ -16,17 +16,17 @@ import { goBack, navigate } from '../../../navigation/navigationRef';
 import { languages } from '../../../constants/data';
 import Icons from '../../../assets/icons/icons';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
+import { useApp } from '../../../contexts/AppContext';
 
-const LanguageSelectionScreen = ({ route }) => {
-  const { userName } = route.params;
+const LanguageSelectionScreen = () => {
+  const { userData, updateUserData } = useApp();
+  const { userName } = userData;
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   const handleNext = () => {
     if (selectedLanguage) {
-      navigate('GoalSelection', {
-        userName,
-        selectedLanguage,
-      });
+      updateUserData({ selectedLanguage });
+      navigate('GoalSelection');
     }
   };
 

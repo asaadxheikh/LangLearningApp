@@ -17,12 +17,16 @@ import Button from '../../../components/Button/index';
 import { navigate } from '../../../navigation/navigationRef';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge'
+import { useApp } from '../../../contexts/AppContext';
+
 const WelcomeScreen = () => {
   const [userName, setUserName] = useState('');
+  const { updateUserData } = useApp();
 
   const handleContinue = () => {
     if (userName.trim()) {
-      navigate('LangLangSelection', { userName: userName.trim() });
+      updateUserData({ userName: userName.trim() });
+      navigate('LangLangSelection');
     }
   };
 

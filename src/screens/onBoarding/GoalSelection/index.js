@@ -16,8 +16,11 @@ import OnboardingProgressBadge from '../../onBoarding/component/OnboardingProgre
 import {goals} from '../../../constants/data'
 import Icons from '../../../assets/icons/icons';
 import Button from '../../../components/Button';
-const GoalSelectionScreen = ({ route }) => {
-  const { userName, selectedLanguage } = route.params;
+import { useApp } from '../../../contexts/AppContext';
+
+const GoalSelectionScreen = () => {
+  const { userData, updateUserData } = useApp();
+  const { userName } = userData;
   const [selectedGoals, setSelectedGoals] = useState([]);
 
 
@@ -31,11 +34,8 @@ const GoalSelectionScreen = ({ route }) => {
 
   const handleNext = () => {
     if (selectedGoals.length > 0) {
-      navigate('SkillLevelScreenScreen', {
-        userName,
-        selectedLanguage,
-        selectedGoals,
-      });
+      updateUserData({ selectedGoals });
+      navigate('SkillLevelScreenScreen');
     }
   };
 

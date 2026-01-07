@@ -13,9 +13,11 @@ import Icons from '../../../assets/icons/icons';
 import Button from '../../../components/Button/index';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
 import { navigate,goBack } from '../../../navigation/navigationRef';
+import { useApp } from '../../../contexts/AppContext';
 
-const PlacementTestScreen = ({ route }) => {
-  const { userName, selectedLanguage, selectedGoals, selectedLevel } = route.params;
+const PlacementTestScreen = () => {
+  const { userData, updateUserData } = useApp();
+  const { userName } = userData;
 
   const testAreas = [
     {
@@ -42,25 +44,13 @@ const PlacementTestScreen = ({ route }) => {
   ];
 
   const handleTakeTest = () => {
-    // Navigate to personalized plan screen
-    navigate('PersonalizedPlanScreen', {
-      userName,
-      selectedLanguage,
-      selectedGoals,
-      selectedLevel,
-      tookPlacementTest: true,
-    });
+    updateUserData({ tookPlacementTest: true });
+    navigate('PersonalizedPlanScreen');
   };
 
   const handleSkip = () => {
-    // Navigate to personalized plan screen
-    navigate('PersonalizedPlanScreen', {
-      userName,
-      selectedLanguage,
-      selectedGoals,
-      selectedLevel,
-      tookPlacementTest: false,
-    });
+    updateUserData({ tookPlacementTest: false });
+    navigate('PersonalizedPlanScreen');
   };
 
   return (

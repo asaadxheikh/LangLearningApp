@@ -17,18 +17,17 @@ import { navigate, goBack } from '../../../navigation/navigationRef';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
 import { levels } from '../../../constants/data';
 import Spacer from '../../../components/Spacer/Spacer'
-const SkillLevelScreen = ({ route }) => {
-  const { userName, selectedLanguage, selectedGoals } = route.params;
+import { useApp } from '../../../contexts/AppContext';
+
+const SkillLevelScreen = () => {
+  const { userData, updateUserData } = useApp();
+  const { userName } = userData;
   const [selectedLevel, setSelectedLevel] = useState('');
 
   const handleContinue = () => {
     if (selectedLevel) {
-      navigate('PlacementTestScreen', {
-        userName,
-        selectedLanguage,
-        selectedGoals,
-        selectedLevel,
-      });
+      updateUserData({ selectedLevel });
+      navigate('PlacementTestScreen');
     }
   };
 

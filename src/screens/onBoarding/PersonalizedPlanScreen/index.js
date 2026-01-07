@@ -15,9 +15,11 @@ import Icons from '../../../assets/icons/icons';
 import Button from '../../../components/Button/index';
 import OnboardingProgressBadge from '../component/OnboardingProgressBadge';
 import { navigate, goBack } from '../../../navigation/navigationRef';
+import { useApp } from '../../../contexts/AppContext';
 
-const PersonalizedPlanScreen = ({ route }) => {
-  const { userName, selectedLanguage, selectedGoals, selectedLevel, tookPlacementTest } = route.params;
+const PersonalizedPlanScreen = () => {
+  const { userData } = useApp();
+  const { userName } = userData;
   const [isLoading, setIsLoading] = useState(true);
   const [fadeAnim] = useState(new Animated.Value(0));
   const [scaleAnim] = useState(new Animated.Value(0.8));
@@ -46,13 +48,7 @@ const PersonalizedPlanScreen = ({ route }) => {
   }, []);
 
   const handleStartLearning = () => {
-    navigate('HomeScreen', {
-      userName,
-      selectedLanguage,
-      selectedGoals,
-      selectedLevel,
-      tookPlacementTest,
-    });
+    navigate('HomeScreen');
   };
 
   return (
