@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: '700',
+    fontFamily: 'Poppins',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 16,
@@ -151,6 +152,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 17,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginBottom: 40,
@@ -175,6 +177,7 @@ const styles = StyleSheet.create({
   },
   featureText: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.text,
     fontWeight: '500',
   },
