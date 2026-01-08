@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   progressBarContainer: {
@@ -299,6 +299,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 12,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
   },
@@ -308,12 +309,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     lineHeight: 22,
   },
@@ -326,7 +328,7 @@ const styles = StyleSheet.create({
   },
   questionText: {
     fontSize: 22,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 24,
     lineHeight: 30,
@@ -376,11 +378,12 @@ const styles = StyleSheet.create({
   optionText: {
     flex: 1,
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 22,
   },
   optionTextSelected: {
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   buttonContainer: {

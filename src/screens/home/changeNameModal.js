@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   closeButton: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 8,
@@ -216,6 +216,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginBottom: 32,

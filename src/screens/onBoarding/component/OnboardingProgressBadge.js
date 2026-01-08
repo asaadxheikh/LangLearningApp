@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 13,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
   },
 });

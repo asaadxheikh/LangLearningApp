@@ -135,12 +135,13 @@ const styles = StyleSheet.create({
   },
   greeting: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   scrollContent: {
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
   },
   languageName: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   checkmark: {
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
   },
   checkmarkText: {
     color: colors.white,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-SemiBold',
   },
   buttonContainer: {
     paddingHorizontal: 24,

@@ -391,11 +391,13 @@ const styles = StyleSheet.create({
   greeting: {
     fontSize: 28,
     fontWeight: '800',
+    fontFamily: 'Poppins',
     color: colors.text,
     marginBottom: 4,
   },
   subtitle: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontWeight: '500',
   },
@@ -415,7 +417,7 @@ const styles = StyleSheet.create({
   },
   streakNumber: {
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: '#FF6B6B',
   },
   settingsButton: {
@@ -453,12 +455,13 @@ const styles = StyleSheet.create({
   },
   progressLabel: {
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 4,
   },
   progressStats: {
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontWeight: '500',
   },
@@ -475,6 +478,7 @@ const styles = StyleSheet.create({
   progressPercentage: {
     fontSize: 16,
     fontWeight: '800',
+    fontFamily: 'Poppins',
     color: colors.accent,
   },
   progressBarWrapper: {
@@ -493,6 +497,7 @@ const styles = StyleSheet.create({
   },
   progressEncouragement: {
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontWeight: '500',
   },
@@ -506,7 +511,7 @@ const styles = StyleSheet.create({
   },
   congratsText: {
     fontSize: 13,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.accent,
     flex: 1,
   },
@@ -545,7 +550,7 @@ const styles = StyleSheet.create({
   },
   continueBadgeText: {
     fontSize: 11,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.secondary,
     letterSpacing: 0.5,
   },
@@ -563,12 +568,15 @@ const styles = StyleSheet.create({
   },
   continueCardTitle: {
     fontSize: 22,
-    fontWeight: '800',
+    fontFamily: 'Poppins',
+    fontWeight: '600',
+    fontStyle: 'italic',
     color: colors.text,
     marginBottom: 8,
   },
   continueCardDescription: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     lineHeight: 22,
     marginBottom: 20,
@@ -585,7 +593,7 @@ const styles = StyleSheet.create({
   },
   continueTimeText: {
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.secondary,
   },
   continueButton: {
@@ -604,7 +612,7 @@ const styles = StyleSheet.create({
   },
   continueButtonText: {
     fontSize: 15,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.white,
   },
   
@@ -622,11 +630,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 22,
     fontWeight: '800',
+    fontFamily: 'Poppins',
     color: colors.text,
   },
   sectionLink: {
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.accent,
   },
   
@@ -661,12 +670,13 @@ const styles = StyleSheet.create({
   },
   taskTitle: {
     fontSize: 17,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.secondary,
     marginBottom: 4,
   },
   taskDescription: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.secondary,
     lineHeight: 19,
     fontWeight: '500',
@@ -678,7 +688,7 @@ const styles = StyleSheet.create({
   },
   taskNumber: {
     fontSize: 13,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     marginBottom: 2,
     color: 'rgba(255, 255, 255, 0.7)',
   },
@@ -742,7 +752,7 @@ const styles = StyleSheet.create({
   },
   durationText: {
     fontSize: 11,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.white,
   },
   playButton: {
@@ -767,12 +777,15 @@ const styles = StyleSheet.create({
   },
   dailyRoutineTitle: {
     fontSize: 18,
-    fontWeight: '800',
+    fontFamily: 'Poppins',
+    fontWeight: '600',
+    fontStyle: 'italic',
     color: colors.secondary,
     marginBottom: 6,
   },
   dailyRoutineDescription: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.secondary,
     lineHeight: 20,
     marginBottom: 16,
@@ -789,7 +802,7 @@ const styles = StyleSheet.create({
   },
   dailyRoutineButtonText: {
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.secondary,
   },
   
@@ -822,13 +835,14 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 24,
     fontWeight: '800',
+    fontFamily: 'Poppins',
     color: colors.text,
     marginBottom: 4,
   },
   statLabel: {
     fontSize: 11,
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
-    fontWeight: '600',
     textAlign: 'center',
   },
 });

@@ -162,10 +162,11 @@ const styles = StyleSheet.create({
   },
   filledText: {
     color: colors.white,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
   },
   filledTextDisabled: {
     color: colors.primary,
+    fontFamily: 'Poppins',
   },
   outlined: {
     backgroundColor: 'transparent',
@@ -180,13 +181,15 @@ const styles = StyleSheet.create({
   },
   outlinedText: {
     color: colors.secondary,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
   },
   outlinedTextDisabled: {
     color: colors.textLight,
+    fontFamily: 'Poppins',
   },
   text: {
     textAlign: 'center',
+    fontFamily: 'Poppins',
   },
   iconContainer: {
     marginHorizontal: 6,

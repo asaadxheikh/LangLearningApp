@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
       },
       userName: {
         fontSize: 18,
-        fontWeight: '600',
+        fontFamily: 'Poppins-SemiBold',
         color: colors.text,
         marginLeft:20
       },

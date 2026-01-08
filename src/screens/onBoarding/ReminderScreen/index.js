@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 32,
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
   recommendedText: {
     color: colors.white,
     fontSize: 10,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     letterSpacing: 1,
   },
   optionContent: {
@@ -283,22 +283,24 @@ const styles = StyleSheet.create({
   },
   optionTitle: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     marginBottom: 8,
   },
   optionTitleSelected: {
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   optionTitleUnselected: {
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   optionTitleGrey: {
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   optionTitleSelectedGrey: {
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
-    fontWeight: '700',
   },
   socialProof: {
     flexDirection: 'row',
@@ -321,10 +323,12 @@ const styles = StyleSheet.create({
   },
   socialProofText: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   optionSubtext: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     marginTop: 4,
   },
@@ -361,6 +365,7 @@ const styles = StyleSheet.create({
   },
   helperText: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginBottom: 16,

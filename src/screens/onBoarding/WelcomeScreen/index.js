@@ -143,8 +143,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    fontWeight: '700',
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 16,

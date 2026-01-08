@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
   },
   modalTitle: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   closeButton: {
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
   },
   avatarText: {
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   profileInfo: {
@@ -278,11 +278,12 @@ const styles = StyleSheet.create({
   },
   profileName: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   profileSubtext: {
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     marginTop: 2,
   },
@@ -294,7 +295,7 @@ const styles = StyleSheet.create({
   },
   sectionLabel: {
     fontSize: 13,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
@@ -328,10 +329,12 @@ const styles = StyleSheet.create({
   menuLabel: {
     fontSize: 15,
     fontWeight: '500',
+    fontFamily: 'Poppins',
     color: colors.text,
   },
   menuValue: {
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.accent,
     marginTop: 2,
     fontWeight: '500',
@@ -353,11 +356,12 @@ const styles = StyleSheet.create({
   },
   logoutText: {
     fontSize: 15,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: '#FF6B6B',
   },
   versionText: {
     fontSize: 12,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     paddingVertical: 16,

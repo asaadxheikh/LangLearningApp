@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   placeholder: {
@@ -221,6 +221,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     fontWeight: '500',
@@ -245,13 +246,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 12,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     lineHeight: 22,
@@ -272,13 +274,14 @@ const styles = StyleSheet.create({
   },
   successTitle: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginTop: 16,
     marginBottom: 8,
   },
   successDescription: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     lineHeight: 20,

@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginLeft:20
   },
@@ -186,12 +186,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     lineHeight: 22,
   },
@@ -228,7 +229,7 @@ const styles = StyleSheet.create({
   goalName: {
     flex: 1,
     fontSize: 17,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   checkmark: {
@@ -242,10 +243,11 @@ const styles = StyleSheet.create({
   checkmarkText: {
     color: colors.white,
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-SemiBold',
   },
   helperText: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginTop: 24,

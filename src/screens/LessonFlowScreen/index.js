@@ -328,7 +328,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   closeButton: {
@@ -379,7 +379,7 @@ const styles = StyleSheet.create({
   },
   scenarioTitle: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 24,
@@ -403,11 +403,12 @@ const styles = StyleSheet.create({
   },
   situationHeaderText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   situationText: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 24,
   },
@@ -423,6 +424,7 @@ const styles = StyleSheet.create({
   infoText: {
     flex: 1,
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 20,
   },
@@ -449,7 +451,7 @@ const styles = StyleSheet.create({
   },
   characterLabel: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   dialogueBubble: {
@@ -465,7 +467,7 @@ const styles = StyleSheet.create({
   },
   dialogueText: {
     fontSize: 20,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 12,
     lineHeight: 28,
@@ -480,6 +482,7 @@ const styles = StyleSheet.create({
   },
   translationText: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontStyle: 'italic',
   },
@@ -495,12 +498,12 @@ const styles = StyleSheet.create({
   },
   audioButtonText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.white,
   },
   sectionTitle: {
     fontSize: 22,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 20,
   },
@@ -531,12 +534,13 @@ const styles = StyleSheet.create({
   },
   responseText: {
     fontSize: 17,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   responseTranslation: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontStyle: 'italic',
   },
@@ -554,7 +558,7 @@ const styles = StyleSheet.create({
   },
   feedbackTitle: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 24,
@@ -572,18 +576,19 @@ const styles = StyleSheet.create({
   },
   reviewLabel: {
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
     marginBottom: 8,
   },
   reviewText: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   reviewTranslation: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     fontStyle: 'italic',
   },
@@ -600,6 +605,7 @@ const styles = StyleSheet.create({
   },
   feedbackMessage: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 24,
   },
@@ -617,11 +623,12 @@ const styles = StyleSheet.create({
   },
   tipsHeaderText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   tipsText: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 22,
   },

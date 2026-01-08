@@ -192,13 +192,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginBottom: 28,
@@ -239,12 +240,13 @@ const styles = StyleSheet.create({
   },
   permissionTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 4,
   },
   permissionDescription: {
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     lineHeight: 18,
   },
@@ -260,6 +262,7 @@ const styles = StyleSheet.create({
   infoText: {
     flex: 1,
     fontSize: 13,
+    fontFamily: 'Poppins',
     color: colors.text,
     lineHeight: 18,
   },
@@ -282,7 +285,7 @@ const styles = StyleSheet.create({
   },
   confirmButtonText: {
     fontSize: 17,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.white,
   },
   skipButton: {
@@ -291,7 +294,7 @@ const styles = StyleSheet.create({
   },
   skipButtonText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.textLight,
   },
 });

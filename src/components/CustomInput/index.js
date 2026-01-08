@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.text,
     paddingVertical: 16,
     paddingHorizontal: 0,
@@ -217,11 +218,13 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 12,
+    fontFamily: 'Poppins',
     color: colors.error || '#FF6B6B',
     marginLeft: 4,
   },
   charCount: {
     fontSize: 12,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'right',
     marginTop: 4,

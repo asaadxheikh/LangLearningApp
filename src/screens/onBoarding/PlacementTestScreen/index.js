@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   placeholder: {
@@ -219,13 +219,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     textAlign: 'center',
     marginBottom: 12,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     lineHeight: 22,
@@ -236,7 +237,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 16,
   },
@@ -266,12 +267,13 @@ const styles = StyleSheet.create({
   },
   areaName: {
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 4,
   },
   areaDescription: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   infoBox: {
@@ -284,12 +286,14 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 15,
+    fontFamily: 'Poppins',
     color: colors.text,
     marginLeft: 12,
     fontWeight: '500',
   },
   skipNote: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     fontStyle: 'italic',

@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
   },
   placeholder: {
@@ -193,12 +193,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     lineHeight: 22,
   },
@@ -236,12 +237,13 @@ const styles = StyleSheet.create({
   },
   levelName: {
     fontSize: 18,
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     color: colors.text,
     marginBottom: 4,
   },
   levelDescription: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
   },
   radio: {
@@ -261,6 +263,7 @@ const styles = StyleSheet.create({
   },
   helperText: {
     fontSize: 14,
+    fontFamily: 'Poppins',
     color: colors.textLight,
     textAlign: 'center',
     marginTop: 24,
